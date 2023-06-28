@@ -4,8 +4,16 @@ public class Chiamata {
 	private String numeroChiamata;
 	private double durataChiamata;
 
-	public Chiamata(String _numeroChiamata, double _durataChiamata) {
-		this.numeroChiamata = _numeroChiamata;
-		this.durataChiamata = _durataChiamata;
+	public Chiamata(String numeroChiamata, double durataChiamata) {
+		this.numeroChiamata = numeroChiamata;
+		this.durataChiamata = durataChiamata;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Numero chiamato: " + numeroChiamata + ", Durata chiamata: " + durataChiamata + " minuti";
 	}
 }
+

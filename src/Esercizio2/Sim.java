@@ -1,5 +1,6 @@
 package Esercizio2;
 
+import java.util.Random;
 public class Sim {
 	private String numeroTelefono;
 	private double credito;
@@ -11,13 +12,34 @@ public class Sim {
 
 	}
 
+	public String getNumeroTelefono() {
+		return numeroTelefono;
+	}
+
 	public Chiamata[] getLastChiamate() {
-		chiamate[0] = new Chiamata("3275498314", 34.5);
-		chiamate[1] = new Chiamata("3458932324", 45.6);
-		chiamate[2] = new Chiamata("3289547832", 34.5);
-		chiamate[3] = new Chiamata("3458695304", 2.5);
-		chiamate[4] = new Chiamata("3456895438", 4.53);
+		Random random = new Random();
+		chiamate[0] = new Chiamata(generateRandomPhoneNumber(), generateRandomDuration());
+		chiamate[1] = new Chiamata(generateRandomPhoneNumber(), generateRandomDuration());
+		chiamate[2] = new Chiamata(generateRandomPhoneNumber(), generateRandomDuration());
+		chiamate[3] = new Chiamata(generateRandomPhoneNumber(), generateRandomDuration());
+		chiamate[4] = new Chiamata(generateRandomPhoneNumber(), generateRandomDuration());
 		return chiamate;
 	}
+
+	private String generateRandomPhoneNumber() {
+		StringBuilder sb = new StringBuilder();
+		Random random = new Random();
+		for (int i = 0; i < 10; i++) {
+			int digit = random.nextInt(10);
+			sb.append(digit);
+		}
+		return sb.toString();
+	}
+
+	private double generateRandomDuration() {
+		Random random = new Random();
+		return random.nextInt(60) + random.nextDouble();
+	}
+
 
 }
