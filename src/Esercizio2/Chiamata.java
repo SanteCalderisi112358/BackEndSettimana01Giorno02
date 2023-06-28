@@ -13,7 +13,12 @@ public class Chiamata {
 
 	@Override
 	public String toString() {
-		return "Numero chiamato: " + numeroChiamata + ", Durata chiamata: " + durataChiamata + " minuti";
+		int minuti = (int) durataChiamata;
+		int secondi = (int) ((durataChiamata - minuti) * 60);
+
+		return "Numero chiamato: " + numeroChiamata + ", Durata chiamata: " + minuti + " minuti e " + secondi
+				+ " secondi";
 	}
+
 }
 

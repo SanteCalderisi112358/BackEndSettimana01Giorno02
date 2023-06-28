@@ -3,12 +3,10 @@ package Esercizio2;
 import java.util.Random;
 public class Sim {
 	private String numeroTelefono;
-	private double credito;
 	private Chiamata[] chiamate = new Chiamata[5];
 
 	public Sim(String _numeroTelefono, int _credito) {
 		this.numeroTelefono = _numeroTelefono;
-		this.credito = _credito;
 
 	}
 
@@ -17,7 +15,7 @@ public class Sim {
 	}
 
 	public Chiamata[] getLastChiamate() {
-		Random random = new Random();
+
 		chiamate[0] = new Chiamata(generateRandomPhoneNumber(), generateRandomDuration());
 		chiamate[1] = new Chiamata(generateRandomPhoneNumber(), generateRandomDuration());
 		chiamate[2] = new Chiamata(generateRandomPhoneNumber(), generateRandomDuration());
