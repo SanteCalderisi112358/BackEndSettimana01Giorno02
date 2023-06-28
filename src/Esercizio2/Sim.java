@@ -4,14 +4,26 @@ import java.util.Random;
 public class Sim {
 	private String numeroTelefono;
 	private Chiamata[] chiamate = new Chiamata[5];
+	private String nomeUtente;
+	private String cognomeUtente;
 
-	public Sim(String _numeroTelefono, int _credito) {
+	public Sim(String _numeroTelefono, int _credito, String _nomeUtente, String _cognomeUtente) {
 		this.numeroTelefono = _numeroTelefono;
+		this.nomeUtente = _nomeUtente;
+		this.cognomeUtente = _cognomeUtente;
 
 	}
 
 	public String getNumeroTelefono() {
 		return numeroTelefono;
+	}
+
+	public String getNomeUtente() {
+		return nomeUtente;
+	}
+
+	public String getCognomeUtente() {
+		return cognomeUtente;
 	}
 
 	public Chiamata[] getLastChiamate() {
